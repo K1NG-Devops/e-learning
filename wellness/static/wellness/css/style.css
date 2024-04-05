@@ -232,7 +232,7 @@ section {
 
 
 #milestone {
-    background: linear-gradient(rgba(41, 255, 191, 0.85), rgba(41, 255, 191, 0.85)), url("{% static 'moribo/img/bg_banner1.jpg' %}");
+    background: linear-gradient(rgba(41, 255, 191, 0.85), rgba(41, 255, 191, 0.85));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
