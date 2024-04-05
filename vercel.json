@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "moribo/wsgi.py",
+            "use": "@vercel/python",
+            "config": {"maxLambdaSize": "15mb", "runtimed": "python3.9"}
+        },
+        {
+            "src": "build_files.sh",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "staticfiles_build"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/static/(.*)",
+            "dest": "moribo/wellness/static/$1",
+            "headers": {"Cache-Control": "max-age=31536000"}
+        },
+        {
+            "src": "/(.*)",
+            "dest": "moribo/wsgi.py"
+        }
+    ]
+}
